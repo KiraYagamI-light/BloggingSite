@@ -1,0 +1,18 @@
+ {% for post in posts %}
+        <h3>{{post.title}}</h3>
+
+
+        {% if post.Author %}
+            <small>Written by {{post.Author}} on {{post.date_posted}}</small>
+        {% else %}
+            <small>Written by unknown on {{post.date_posted}}</small>
+        {% endif %}
+
+        <p style="white-space:pre-wrap">{{post.content}}</p>
+        <br>
+
+        <a  class="btn btn-primary"href="/posts/edit/{{post.id}}">EDIT</a>
+        <a  class="btn btn-danger" href="/posts/delete/{{post.id}}">DELETE</a>
+
+    <hr>
+    {% endfor %}
